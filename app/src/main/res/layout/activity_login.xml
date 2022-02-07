@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LoginActivity">
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/instalogo"
+        android:layout_alignParentTop="true"
+        android:layout_above="@+id/logins"/>
+
+    <LinearLayout
+        android:id="@+id/logins"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_alignParentBottom="true">
+        <TextView
+            android:id="@+id/email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Email"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp" />
+        <EditText
+            android:id="@+id/email_edit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:hint="Email"/>
+        <EditText
+            android:id="@+id/pwd_edit"
+            android:inputType="textPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:hint="Password" />
+
+        <android.widget.Button
+            android:id="@+id/signup"
+            android:background="@color/colorWhite"
+            android:text="SIGNUP OR SIGNIN BY EMAIL"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginBottom="40dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="15dp"/>
+
+        <android.widget.Button
+            android:id="@+id/facebooklogin"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="5dp"
+            android:background="@drawable/btn_signin_facebook"
+            android:text="FACEBOOK LOGIN"
+            android:textColor="@color/white" />
+
+        <android.widget.Button
+            android:id="@+id/googlelogin"
+            android:text="Google LOGIN"
+            android:background="@drawable/btn_signin_google"
+            android:textColor="@color/white"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginBottom="70dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"/>
+    </LinearLayout>
+
+</RelativeLayout>

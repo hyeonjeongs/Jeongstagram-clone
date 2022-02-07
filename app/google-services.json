@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "185220555698",
+    "project_id": "jeongstagram-a1b53",
+    "storage_bucket": "jeongstagram-a1b53.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:185220555698:android:476b4f5e1093ccd2c9faab",
+        "android_client_info": {
+          "package_name": "com.example.jeongstagram"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "185220555698-e8vr5pnbmil1th1u12ob1v7gdo4569n5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBvKH0H3yFHxjFKpf7Uu6JBmvMSgQ_eZXk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "185220555698-e8vr5pnbmil1th1u12ob1v7gdo4569n5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
