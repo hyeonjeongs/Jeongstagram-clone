@@ -58,7 +58,12 @@ class LoginActivity : AppCompatActivity() {
         //printHashKey() //facebook로그인을 위해 해쉬값 가져오는것
         callbackManager = CallbackManager.Factory.create()
     }
-    //LT+mHuFZqP6J0Q/VWdJ9mc+3MJI= 해쉬값 변환
+
+    //자동로그인
+    override fun onStart() {
+        super.onStart()
+        moveMainPage(auth?.currentUser)
+    }
 
     fun printHashKey() {
         try {
@@ -182,7 +187,7 @@ class LoginActivity : AppCompatActivity() {
     fun moveMainPage(user: FirebaseUser?) {//로그인 성공했을떄 다음 페이지로 넘어가는 함수
         if(user!=null){ //파이어 베이스 유저상태 넘겨줌 - 있을 경우
             startActivity(Intent(this, MainActivity::class.java)) //메인화면으로 넘겨줌
-
+            finish() //로그인엑티비티 꺼지면서 메인엑티비티 켜짐
         }
     }
 }

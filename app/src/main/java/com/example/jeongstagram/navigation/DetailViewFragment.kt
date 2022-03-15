@@ -36,6 +36,8 @@ class DetailViewFragment : Fragment() {
             firestore?.collection("images")?.orderBy("timestamp")?.addSnapshotListener{ querySnapshot, firebaseFirestoreException ->
                 contentDTOs.clear() //초기화
                 contentUIDList.clear() //초기화
+                if(querySnapshot == null)
+                    return@addSnapshotListener //프로그램 안정성 높임
                 for(snapshot in querySnapshot!!.documents){//스냅샷 돌리면서 넘어오는 데이터에 접근
                     var item = snapshot.toObject(ContentDTO::class.java) //contentDTO에 담아옴
                     contentDTOs.add(item!!)
@@ -72,7 +74,7 @@ class DetailViewFragment : Fragment() {
             //profileImage
             Glide.with(holder.itemView.context).load(contentDTOs!![position].imageUri).into(viewholder.detailviewitem_profile_image)
 
-            //This code is when the buttonis clicked
+            //This code is when the button is clicked
             viewholder.detailviewitem_favorite_imageview.setOnClickListener {
                 favoriteEvent(position)
             }
@@ -85,6 +87,15 @@ class DetailViewFragment : Fragment() {
                 //좋아요 버튼 없애는 경우
                 viewholder.detailviewitem_favorite_imageview.setImageResource(R.drawable.ic_favorite_border)
 
+            }
+            //프로필 이미지 클릭했을떄
+            viewholder.detailviewitem_profile_image.setOnClickListener {
+                var fragment = UserFragment()
+                var bundle = Bundle()
+                bundle.putString("destinationUid",contentDTOs[position].uid)
+                bundle.putString("userId",contentDTOs[position].userId)
+                fragment.arguments = bundle
+                activity?.supportFragmentManager?.beginTransaction()?.replace(R.id.main_content,fragment)?.commit()
             }
         }
 
